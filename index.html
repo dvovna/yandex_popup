@@ -13,23 +13,98 @@
 <body>
 
 <h1>
-    Сверстайте всплывающее окно (попап) — элемент, который показывается поверх содержимого веб-страницы. Он должен всегда находиться в её центре, при этом размер контента может меняться. Предложите максимальное количество решений и объясните, какие у каждого из них есть недостатки и преимущества. Результат пришлите в виде ссылки на GitHub.
+    Сверстайте всплывающее окно (попап) — элемент,
+    который показывается поверх содержимого веб-страницы.
+    Он должен всегда находиться в её центре,
+    при этом размер контента может меняться.
+    Предложите максимальное количество решений и объясните,
+    какие у каждого из них есть недостатки и преимущества.
+    Результат пришлите в виде ссылки на GitHub.
 </h1>
 
-<div class="popup">
-    <div class="popup_content">
-        <h1>
-            Сверстайте всплывающее окно (попап) — элемент,
-            который показывается поверх содержимого веб-страницы.
-            Он должен всегда находиться в её центре,
-            при этом размер контента может меняться.
-            Предложите максимальное количество решений и объясните,
-            какие у каждого из них есть недостатки и преимущества.
-            Результат пришлите в виде ссылки на GitHub.
-        </h1>
+<button id="first">First</button>
+<button id="second">Second</button>
+
+<div class="popup hidden" id="popup1">
+    Best solution
+</div>
+
+<div class="popup hidden" id="popup2">
+    <div class="content">
+        <h2>
+            Данный вариант позволяет отрисовывать всплывающее окно c шириной выставленной в процентах.
+            При изменении размера содержимого окна появятся скроллбары автоматически если сожержимое окна превысит допустимый размер.
+            Ключевыми свойствами для достижения такого эффекта являются:
+            <ul>
+                <li>применение margin: auto на родителе + position:absolute и обнуление top,left,bottom,right.</li>
+                <li>применение выше приведенных свойств к дочернему элементу и установка фиксированного размера.</li>
+            </ul>
+
+            <p>Данный подход демонстрирует отличный пример имплементации модального окна с применением минимума свойст и элементов на странице.</p>
+            <p>Окно работоспособно в большинстве современных браузеров + IE8</p>
+        </h2>
     </div>
 </div>
 
+<script type="text/javascript">
+    var firstPopupBtn = document.getElementById("first"),
+        secondPopupBtn = document.getElementById("second"),
+        popup1El = document.getElementById("popup1"),
+        popup2El = document.getElementById("popup2"),
+        popupElts = document.getElementsByClassName('popup');
+
+    Object.prototype.show = function () {
+        var el = this,
+            classes = el.className.split(' ');
+
+        for (var i = 0; i < classes.length; i++) {
+            if (classes[i] === "hidden") {
+                classes.splice(i, 1);
+                i--;
+            }
+        }
+
+        el.className = classes.join(' ');
+    };
+
+    Object.prototype.hide = function () {
+        var elts = this,
+            classes;
+
+        function addHiddenClass(el) {
+            classes = el.className.split(' ');
+            classes.push('hidden');
+            el.className = classes.join(' ');
+        }
+
+        if (typeof elts !== "object") {
+            addHiddenClass(elts);
+            return;
+        }
+
+        for (var i = 0; i < elts.length; i++) {
+            addHiddenClass(elts[i]);
+        }
+    };
+
+    firstPopupBtn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        popup2El.hide();
+        popup1El.show();
+    };
+
+    secondPopupBtn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        popup1El.hide();
+        popup2El.show();
+    };
+
+    document.body.onclick = function (e) {
+        popupElts.hide();
+    };
+</script>
 
 </body>
 </html>
