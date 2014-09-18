@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
 }
-h1 {
+h2 {
     padding: 0;
     margin: 0;
 }
@@ -14,7 +14,6 @@ ul {
 .popup {
     display: block;
     position: absolute;
-    overflow: auto;
     margin: auto;
     right: 0;
     top: 0;
@@ -26,6 +25,7 @@ ul {
     background-color: bisque;
     padding: 20px;
     margin: auto;
+    overflow: auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +34,6 @@ ul {
     height: 50%;
     width: 50%;
 }
-
 
 .hidden {
     display: none;
