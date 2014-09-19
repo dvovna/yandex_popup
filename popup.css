@@ -44,6 +44,13 @@ ul.minuses {
     width: 50%;
 }
 
+
+
+
+
+
+
+
 .popup {
     display: block;
     position: absolute;
@@ -54,7 +61,7 @@ ul.minuses {
     left: 0;
 }
 
-.popup > .content {
+.popup > .popup_content {
     background-color: bisque;
     padding: 20px;
     margin: auto;
@@ -67,6 +74,20 @@ ul.minuses {
     height: 50%;
     width: 50%;
 }
+
+.popup > .popup_mask {
+    position: absolute;
+    background-color: grey;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+
 
 .hidden {
     display: none;
