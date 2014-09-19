@@ -24,6 +24,7 @@ var firstPopupBtn = document.getElementById("firstBtn"),
 
         function addHiddenClass(el) {
             classes = el.className.split(' ');
+            if (classes.indexOf("hidden") === 1) { return; }
             classes.push('hidden');
             el.className = classes.join(' ');
         }
