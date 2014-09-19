@@ -1,5 +1,5 @@
-var firstPopupBtn = document.getElementById("first"),
-        secondPopupBtn = document.getElementById("second"),
+var firstPopupBtn = document.getElementById("firstBtn"),
+        secondPopupBtn = document.getElementById("secondBtn"),
         popup1El = document.getElementById("popup1"),
         popup2El = document.getElementById("popup2"),
         popupElts = document.getElementsByClassName('popup');

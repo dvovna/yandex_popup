@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    color: grey;
 }
 h2 {
     padding: 0;
@@ -9,6 +10,38 @@ h2 {
 
 ul {
     list-style-type: decimal;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+}
+
+.control_panel {
+    background-color: burlywood;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    width: 50%;
+}
+
+ul.info {
+    color: grey;
+}
+
+ul.pluses {
+    color: green;
+}
+
+ul.minuses {
+    color: red;
+}
+
+.page_title {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
 }
 
 .popup {
